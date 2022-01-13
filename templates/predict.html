@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+        {% block content %}
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <!-- <script type="text/javascript">
+         
+            function getInputValue() {
+                var open = document.getElementsById("openid").value;
+                var high1= document.getElementsByName(high);
+                var low1= document.getElementsByName(low);
+                alert(open);
+                //console.log("haha",open,high,low)
+                if(high < low){
+                  alert('Harga high harus lebih besar dari low')
+                }
+            };
+        </script> -->
+        <!-- Page Content-->
+            <hr class="m-0" />
+            <!-- Interests-->
+            <section class="resume-section" id="predict">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Predict</h2>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <form class="" action="" method="post" enctype="multipart/form-data">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Open </span>
+                                    <input type="number" step="0.001" id="openid" name="open" required  class="form-control" aria-label="Amount (to the nearest dollar)" autocomplete="off">
+                                    <!-- <span class="input-group-text">.00</span> -->
+                                  </div>
+                                  <div class="input-group mb-3">
+                                    <span class="input-group-text">High </span>
+                                    <input type="number" step="0.001" name="high" required class="form-control" aria-label="Amount (to the nearest dollar)" autocomplete="off">
+                                    <!-- <span class="input-group-text">.00</span> -->
+                                  </div>
+                                  <div class="input-group mb-3">
+                                    <span class="input-group-text">Low </span>
+                                    <input type="number" step="0.001" name="low" required class="form-control" aria-label="Amount (to the nearest dollar)" autocomplete="off">
+                                    <!-- <span class="input-group-text">.00</span> -->
+                                  </div>
+                                  <div class="input-group mb-3">
+                                    <span class="input-group-text">Volume</span>
+                                    <input type="number" name="volume" required class="form-control" aria-label="Amount (to the nearest dollar)" autocomplete="off">
+                                    <!-- <span class="input-group-text">.00</span> -->
+                                  </div>
+                                  <input type="submit" id="sub" name="" value="Predict" class="btn btn-primary"/>
+                            </form> 
+                            
+                        </div>
+                            {% if error %}
+                              <div class='error-msg'>{{ error }}</div>
+                            {% endif %}
+                            <div class="col align-self-center">
+                                <h3>Hasil Prediksi: {{hasil}}</h3>
+                            </div>
+                            
+                      </div>
+                      <div>
+                        <a type="button" class="btn btn-primary" href="{{url_for('prediction')}}">predict this day</a>
+                        </div>
+                </div>
+        {% endblock %}
+       

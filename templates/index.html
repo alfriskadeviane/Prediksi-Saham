@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+    <section class="resume-section" id="data">
+        <div class="resume-section-content">
+            <h2 class="mb-0">
+                Prediksi
+                <span class="text-primary">Harga Saham</span>
+            </h2>
+            <div class="subheading mb-4">
+                Data Harga Saham Harian BBCA
+            </div>
+            <!-- <form class="" action="" method="post" enctype="multipart/form-data">
+                <input type="file" name="csvfile" value="" />
+                <input type="submit" name="" value="Submit" />
+            </form> -->
+            <div class="mt-4">
+                {{data|safe}}
+            </div>  
+        </div>
+    </section>
+    
+    
+    {% endblock %}
+            
+            

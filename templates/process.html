@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+    {% block content %}
+    
+    <section class="resume-section" id="bobotawal">
+        <div class="resume-section-content">
+            <h2 >Backpropagation</h2>
+            <a type="button" class="btn btn-primary" href="#bobotawal">Backpropagation</a>
+            <a type="button" class="btn btn-primary" href="#bobotbaru">Genetika</a>
+            <h4 class='mt-2' align='center'>Bobot Awal</h4>
+            <p align='center'>Bobot Input Layer</p>
+            <div class="d-flex flex-column flex-md-row justify-content-between">
+                {{w1|safe}}
+            </div>
+            <p align='center'>Bias Input Layer</p>
+            {{b1|safe}}
+            <p align='center'>Bobot Hidden Layer</p>
+            {{w2|safe}}
+            <p align='center'>Bias Hidden Layer</p>
+            {{b2|safe}}
+            <h4 align='center'>Bobot Baru</h4>
+            <p align='center'>Bobot Input Layer</p>
+            <div class="d-flex flex-column flex-md-row justify-content-between">
+                {{wb1|safe}}
+            </div>
+            <p align='center'>Bias Input Layer</p>
+            {{bb1|safe}}
+            <p align='center'>Bobot Hidden Layer</p>
+            {{wb2|safe}}
+            <p align='center'>Bias Hidden Layer</p>
+            {{bb2|safe}}
+        </div>
+    </section>
+    <h3 align='center'>Grafik Target dan Output</h3>
+    <div id="chart" class="chart"></div>
+    <div>
+        <h3 align='center'>MSE: {{nmse|safe}}</h3>
+    </div>
+    <section class="resume-section" id="bobotbaru">
+        <div class="resume-section-content">
+            <h2 >Optimasi dengan Algoritma Genetika</h2>
+            <a type="button" class="btn btn-primary" href="#bobotawal">Backpropagation </a>
+            <a type="button" class="btn btn-primary" href="#bobotbaru">Genetika</a>
+            <!-- <h4 class='mt-2' align='center'>Populasi Awal</h4> -->
+            <div class="d-flex flex-column flex-md-row justify-content-between">
+                <!-- {{dp|safe}} -->
+            </div>
+            <h4 align='center'>Bobot Awal Hasil Optimasi</h4>
+            <p align='center'>Bobot Input Layer</p>
+            <div class="d-flex flex-column flex-md-row justify-content-between">
+                {{wp1|safe}}
+            </div>
+            <p align='center'>Bias Input Layer</p>
+            {{bp1|safe}}
+            <p align='center'>Bobot Hidden Layer</p>
+            {{wp2|safe}}
+            <p align='center'>Bias Hidden Layer</p>
+            {{bp2|safe}}
+            <h4 align='center'>Bobot Akhir Hasil Training</h4>
+            <p align='center'>Bobot Input Layer</p>
+            <div class="d-flex flex-column flex-md-row justify-content-between">
+                {{wa1|safe}}
+            </div>
+            <p align='center'>Bias Input Layer</p>
+            {{ba1|safe}}
+            <p align='center'>Bobot Hidden Layer</p>
+            {{wa2|safe}}
+            <p align='center'>Bias Hidden Layer</p>
+            {{ba2|safe}}
+        </div>
+    </section>
+    <h3 align='center'>Grafik Target dan Output</h3>
+    <div id="cht" class="chart"></div>
+    <h3 align='center'>MSE: {{gmse|safe}}</h3>
+    {% endblock %}

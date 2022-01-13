@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+        {% block content %}
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <!-- Page Content-->
+            <hr class="m-0" />
+            <!-- Interests-->
+            <section class="resume-section" id="predict">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Predict</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <form class="" action="" method="post" enctype="multipart/form-data">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Open </span>
+                                    <input type="number" value="{{open}}" disabled step="0.001" id="openid" name="open" required  class="form-control" aria-label="Amount (to the nearest dollar)" autocomplete="off">
+                                    <!-- <span class="input-group-text">.00</span> -->
+                                  </div>
+                                  <div class="input-group mb-3">
+                                    <span class="input-group-text">High </span>
+                                    <input type="number" value="{{high}}" disabled step="0.001" name="high" required class="form-control" aria-label="Amount (to the nearest dollar)" autocomplete="off">
+                                    <!-- <span class="input-group-text">.00</span> -->
+                                  </div>
+                                  <div class="input-group mb-3">
+                                    <span class="input-group-text">Low </span>
+                                    <input type="number" value="{{low}}" disabled step="0.001" name="low" required class="form-control" aria-label="Amount (to the nearest dollar)" autocomplete="off">
+                                    <!-- <span class="input-group-text">.00</span> -->
+                                  </div>
+                                  <div class="input-group mb-3">
+                                    <span class="input-group-text">Volume</span>
+                                    <input type="number" value="{{volume}}" disabled name="volume" required class="form-control" aria-label="Amount (to the nearest dollar)" autocomplete="off">
+                                    <!-- <span class="input-group-text">.00</span> -->
+                                  </div>
+                                  <!-- <input type="submit" id="sub" name="" value="Predict" class="btn btn-primary"/> -->
+                            </form> 
+                        </div>
+                            {% if error %}
+                              <div class='error-msg'>{{ error }}</div>
+                            {% endif %}
+                            <div class="col align-self-center">
+                                <h3>Hasil Prediksi: {{hasil}}</h3>
+                                <h4>MSE           : {{mse}}</h4>
+                            </div>
+                      </div>
+                </div>
+        {% endblock %}
+       
